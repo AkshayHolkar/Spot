@@ -22,6 +22,7 @@
     "@fortawesome/angular-fontawesome": "^0.8.1",
     "@fortawesome/fontawesome-common-types": "^0.2.32",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "antd": "^4.10.0",
     "font-awesome": "^4.7.0",
     "ng-zorro-antd": "^11.0.1",
     "rxjs": "~6.6.0",
