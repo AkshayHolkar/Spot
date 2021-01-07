@@ -1,0 +1,15 @@
+<div class="site-page-header-ghost-wrapper">
+    <nz-page-header nzBackIcon [nzGhost]="false">
+        <nz-page-header-title>Spot</nz-page-header-title>
+        <nz-page-header-extra>
+          <button nz-button nz-dropdown [nzDropdownMenu]="menu" >I want to feel</button>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu>
+                    <li nz-menu-item><i class="fa fa-smile-o" aria-hidden="true"></i>Happy</li>
+                    <li nz-menu-item><i class="fa fa-frown-o" aria-hidden="true"></i>Sad</li>
+                    <li nz-menu-item><i class="fa fa-heart" aria-hidden="true"></i>Loved</li>
+                </ul>
+            </nz-dropdown-menu>
+        </nz-page-header-extra>
+    </nz-page-header>
+</div>
