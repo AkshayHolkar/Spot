@@ -15,13 +15,17 @@ import { HeaderComponent } from './header/header.component';
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './footer/footer.component';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ registerLocaleData(en);
     NzPageHeaderModule,
     NzDropDownModule,
     FontAwesomeModule,
+    NzLayoutModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
