@@ -17,6 +17,7 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { MoviecardComponent } from './moviecard/moviecard.component';
 
 
 registerLocaleData(en);
@@ -25,7 +26,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MoviecardComponent
   ],
   imports: [
     BrowserModule,
