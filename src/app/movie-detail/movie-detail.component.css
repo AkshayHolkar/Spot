@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .header {
+    padding: 10px;
+  }
+
+ 
+  .photo {
+    width: 25%;
+    float: left;
+    padding: 15px;
+  }
+  
+  .info {
+    width: 75%;
+    float: left;
+    padding: 15px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .button_R{
+    background-color: #f44336;
+    border-color: white;
+  }
+
+  .column {
+    float: left;
+    width: 16%;
+  }
+  
+ 
+  /* Clear floats after the columns */
+  .row{
+      padding-top: 1%;
+      padding-left: 1%;
+      padding-bottom: 10%;
+  }
+
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+/* Emotion style */
+  .happy{
+     color: darkgreen; 
+  }
+
+  .loved{
+      color:red;
+  }
+
+
+  a{
+      padding: 5px;
+  }
+
+  b{
+      padding: 5px;
+  }
+

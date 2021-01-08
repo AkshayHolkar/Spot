@@ -18,6 +18,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { MoviecardComponent } from './moviecard/moviecard.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MoviecardListComponent } from './moviecard-list/moviecard-list.component';
+import { SimilarMoviecardComponent } from './similar-moviecard/similar-moviecard.component';
+//import { SmileTwoTone} from '@ant-design/icons';
+//import { Row, Col, Divider } from 'antd';
 
 
 registerLocaleData(en);
@@ -27,7 +32,10 @@ registerLocaleData(en);
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MoviecardComponent
+    MoviecardComponent,
+    MoviecardListComponent,
+    MovieDetailComponent,
+    SimilarMoviecardComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +47,9 @@ registerLocaleData(en);
     NzPageHeaderModule,
     NzDropDownModule,
     FontAwesomeModule,
-    NzLayoutModule
+    NzLayoutModule,
+   // SmileTwoTone,
+  //  Row,Col,Divider,
     
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
