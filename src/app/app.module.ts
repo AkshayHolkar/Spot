@@ -52,7 +52,7 @@ registerLocaleData(en);
   //  Row,Col,Divider,
     
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [HttpClientModule,{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
