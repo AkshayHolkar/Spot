@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {MoviesDataService} from '../movies-data.service';
+import {dataType} from '../movie'
+
+
 
 @Component({
   selector: 'app-moviecard-list',
@@ -6,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./moviecard-list.component.css']
 })
 export class MoviecardListComponent implements OnInit {
+ 
+  isFetching = false;
+  movies:dataType[]=[];
 
-  constructor() { }
+  constructor(private movie:MoviesDataService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.isFetching = true;
+    this.movie.fetchMovies().subscribe(data=>{
+      this.isFetching = false;
+     this.movies =data.results;
+    })  
   }
+ 
 
 }
