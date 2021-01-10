@@ -28,5 +28,17 @@ describe('HttpClient testing',()=>{
     spectator.expectOne('https://api.themoviedb.org/3/discover/movie?api_key=b45808cfc639faa44235410b835b0912&language=en-US&with_genres=878', HttpMethod.GET);
     
   });
+
+  it('should get movie detail',()=>{
+    spectator.service.fetchMovieDetail(550).subscribe();
+    spectator.expectOne('https://api.themoviedb.org/3/movie/550?api_key=b45808cfc639faa44235410b835b0912', HttpMethod.GET);
+    
+  });
+
+  it('should get similar movies',()=>{
+    spectator.service.similarMovies(550).subscribe();
+    spectator.expectOne('https://api.themoviedb.org/3/movie/550/similar?api_key=b45808cfc639faa44235410b835b0912', HttpMethod.GET);
+    
+  });
   
 });
