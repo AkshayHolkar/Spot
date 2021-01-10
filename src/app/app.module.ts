@@ -21,6 +21,7 @@ import { MoviecardComponent } from './moviecard/moviecard.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MoviecardListComponent } from './moviecard-list/moviecard-list.component';
 import { SimilarMoviecardComponent } from './similar-moviecard/similar-moviecard.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 //import { SmileTwoTone} from '@ant-design/icons';
 //import { Row, Col, Divider } from 'antd';
 
@@ -35,7 +36,8 @@ registerLocaleData(en);
     MoviecardComponent,
     MoviecardListComponent,
     MovieDetailComponent,
-    SimilarMoviecardComponent
+    SimilarMoviecardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
