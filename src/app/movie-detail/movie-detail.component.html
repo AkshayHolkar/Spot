@@ -1,18 +1,17 @@
 <div>
-<div class="header">
-  <h1>Movie name</h1>
-</div>
-
 <div class="row">
 
 <div class="photo">
-     <img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />
+     <img alt="poster" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" />
 
 </div>
 
 <div class="info">
-  <h1>Movie name</h1>
-  <p>Detail info of movie</p>
+  <h1>{{movie.title}}</h1>
+  <h2>{{movie.tagline}}</h2>
+  <p>{{movie.overview}}</p>
+  <p>Average vote: <b>{{movie.vote_average}}</b></p>
+  <p>Release date: <b>{{movie.release_date}}</b></p>
   <p>Emotion- <b class="happy">:) 22</b> <b class="loved">loved 16</b> </p>
     <p>Tag your Emotion- <a>:)</a><a>:(</a>  <a>loved</a> <a>curious</a> <a>fear</a></p>
     <button class="button_R">Remove</button>
@@ -29,6 +28,7 @@
   <div class="column"><app-similar-moviecard></app-similar-moviecard></div>
   <div class="column"><app-similar-moviecard></app-similar-moviecard></div>
 
+  
 </div>
 
 </div>

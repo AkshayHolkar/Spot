@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {movieDetail} from '../movie-detail'
+import {dataType} from '../movie'
+import {MoviesDataService} from '../movies-data.service';
+
 
 @Component({
   selector: 'app-movie-detail',
@@ -7,9 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovieDetailComponent implements OnInit {
 
-  constructor() { }
+  isFetching = false;
+  movie:movieDetail;
+  similarMovies:dataType[]=[];
+  providedId: number;
 
-  ngOnInit(): void {
-  }
+  constructor(private route:ActivatedRoute, private service:MoviesDataService) { }
+
+  ngOnInit(){
+
+    this.providedId = this.route.snapshot.params['id'];
+    this.isFetching = true;
+    this.service.fetchMovieDetail(this.providedId).subscribe(data=>{
+      this.isFetching = false;
+     this.movie =data;
+    })   
+    
+    }
 
 }
