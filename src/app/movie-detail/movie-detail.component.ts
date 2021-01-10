@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {movieDetail} from '../movie-detail'
-import {dataType} from '../movie'
 import {MoviesDataService} from '../movies-data.service';
 
 
@@ -14,7 +13,6 @@ export class MovieDetailComponent implements OnInit {
 
   isFetching = false;
   movie:movieDetail;
-  similarMovies:dataType[]=[];
   providedId: number;
 
   constructor(private route:ActivatedRoute, private service:MoviesDataService) { }
@@ -25,8 +23,8 @@ export class MovieDetailComponent implements OnInit {
     this.isFetching = true;
     this.service.fetchMovieDetail(this.providedId).subscribe(data=>{
       this.isFetching = false;
-     this.movie =data;
-    })   
+     this.movie =data;    
+  });
     
     }
 

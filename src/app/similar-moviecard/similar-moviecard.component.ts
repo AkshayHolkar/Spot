@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {dataType} from '../movie';
+import {MoviesDataService} from '../movies-data.service';
+
+
 
 @Component({
   selector: 'app-similar-moviecard',
@@ -7,9 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimilarMoviecardComponent implements OnInit {
 
-  constructor() { }
+  @Input() id:number;
 
-  ngOnInit(): void {
+  similarMovies:dataType[]=[];
+  isFetching=false;
+
+  count:number;
+
+  constructor(private service:MoviesDataService) { }
+
+  ngOnInit(){
+    this.isFetching = true;
+    this.service.similarMovies(this.id).subscribe(data=>{
+      this.isFetching = false;
+     this.similarMovies =data.results.slice(0,6);    
+  });
   }
 
 }
