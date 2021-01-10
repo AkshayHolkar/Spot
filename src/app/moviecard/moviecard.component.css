@@ -9,7 +9,14 @@
     border: 2px solid #4c56af; 
   }
 
-  [nz-button]:hover {
+[nz-button]:hover {
     background-color: #4c56af; 
     color: white;
   }
+
+[style]{
+
+    background-color: rgb(233, 233, 233);
+  }
+
+ 

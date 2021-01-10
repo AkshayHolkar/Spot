@@ -31,23 +31,23 @@
     float: left;
     width: 16%;
   }
+
+
+/* Clear floats after the columns */
+.row{
+    padding-top: 1%;
+    padding-left: 1%;
+    padding-bottom: 10%;
+    color: white;
+}
+
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
   
- 
-  /* Clear floats after the columns */
-  .row{
-      padding-top: 1%;
-      padding-left: 1%;
-      padding-bottom: 10%;
-      color: white;
-  }
-
-
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
 /* Emotion style */
   .happy{
      color: darkgreen; 
