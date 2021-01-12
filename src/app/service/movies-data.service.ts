@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http'
-import {map} from 'rxjs/operators';
-import {resultType} from './result';
-import {movieDetail} from './movie-detail';
+import {HttpClient, HttpHeaders} from '@angular/common/http'
+import { map } from 'rxjs/operators';
+import {resultType} from '../share/result';
+import {movieDetail} from '../share/movie-detail';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesDataService {
+
+  private emotionsUrl = 'api/emotions';  // URL to web api
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
 
   constructor(private http:HttpClient) { }
 
@@ -44,4 +51,7 @@ export class MoviesDataService {
 
     }));
   }
+
+
+   
 }
