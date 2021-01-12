@@ -5,9 +5,14 @@
           <button nz-button nz-dropdown [nzDropdownMenu]="menu" >I want to feel</button>
             <nz-dropdown-menu #menu="nzDropdownMenu">
                 <ul nz-menu>
-                    <li nz-menu-item><i class="fa fa-smile-o" aria-hidden="true"></i>Happy</li>
-                    <li nz-menu-item><i class="fa fa-frown-o" aria-hidden="true"></i>Sad</li>
-                    <li nz-menu-item><i class="fa fa-heart" aria-hidden="true"></i>Loved</li>
+                    <li nz-menu-item><fa-icon [icon]="happyIcon"></fa-icon> Happy</li>
+                    <li nz-menu-item><fa-icon [icon]="sadIcon"></fa-icon> Sad</li>
+                    <li nz-menu-item><fa-icon [icon]="loveIcon"></fa-icon> Loved</li>
+                    <li nz-menu-item><fa-icon [icon]="fearIcon"></fa-icon> Fear</li>
+                    <li nz-menu-item><fa-icon [icon]="optimisticIcon"></fa-icon> Optimistic</li>
+                    <li nz-menu-item><fa-icon [icon]="amazedIcon"></fa-icon> Amazed</li>
+
+
                 </ul>
             </nz-dropdown-menu>
         </nz-page-header-extra>

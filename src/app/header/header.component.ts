@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faSmile, faSadCry, faKissWinkHeart, faFlushed, faGrinAlt, faGrinStars } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-header',
@@ -7,6 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  //Import icons
+  happyIcon = faSmile;
+  sadIcon = faSadCry;
+  loveIcon = faKissWinkHeart;
+  fearIcon = faFlushed;
+  optimisticIcon = faGrinAlt;
+  amazedIcon = faGrinStars;
+  
   constructor() { }
 
   ngOnInit(): void {
