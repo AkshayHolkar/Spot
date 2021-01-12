@@ -53,9 +53,25 @@
      color: darkgreen; 
   }
 
+  .sad{
+    color: rgb(0, 93, 100); 
+ }
+
   .loved{
       color:red;
   }
+
+  .fear{
+    color: darkred; 
+ }
+
+ .optimistic{
+  color: rgb(218, 204, 15); 
+}
+
+.amazed{
+  color: rgb(100, 0, 75); 
+}
 
 
   a{

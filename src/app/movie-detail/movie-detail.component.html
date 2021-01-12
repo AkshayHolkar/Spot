@@ -12,8 +12,42 @@
   <p>{{movie.overview}}</p>
   <p>Average vote: <b>{{movie.vote_average}}</b></p>
   <p>Release date: <b>{{movie.release_date}}</b></p>
-  <p>Emotion- <b class="happy">:) 22</b> <b class="loved">loved 16</b> </p>
-    <p>Tag your Emotion- <a>:)</a><a>:(</a>  <a>loved</a> <a>curious</a> <a>fear</a></p>
+
+  <p>Emotion- 
+  <b class="happy">
+  <fa-icon [icon]="happyIcon"></fa-icon> {{thisMEmotion.happy}}
+  </b> 
+
+   <b class="sad">
+  <fa-icon [icon]="sadIcon"></fa-icon> {{thisMEmotion.sad}}
+  </b> 
+  
+  <b class="loved">
+   <fa-icon [icon]="loveIcon"></fa-icon> {{thisMEmotion.loved}}
+  </b> 
+
+   <b class="fear">
+   <fa-icon [icon]="fearIcon"></fa-icon>  {{thisMEmotion.fear}}
+  </b> 
+
+   <b class="optimistic">
+  <fa-icon [icon]="optimisticIcon"></fa-icon>  {{thisMEmotion.optimistic}}
+  </b>
+
+  <b class="amazed">
+  <fa-icon [icon]="amazedIcon"></fa-icon> {{thisMEmotion.amazed}}
+  </b> 
+  
+  </p>
+    <p>Tag your Emotion- 
+    <button class="happy" ng-click="" ><fa-icon [icon]="happyIcon"></fa-icon></button>
+     <button class="sad" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="sadIcon"></fa-icon></button>  
+     <button class="loved" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="loveIcon"></fa-icon></button>  
+     <button class="fear" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="fearIcon"></fa-icon></button>  
+     <button class="optimistic" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="optimisticIcon"></fa-icon></button> 
+      <button class="amazed" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="amazedIcon"></fa-icon></button>  
+ 
+     </p>
     <button class="button_R">Remove</button>
 </div>
 </div>

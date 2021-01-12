@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {movieDetail} from '../movie-detail'
-import {MoviesDataService} from '../movies-data.service';
+import {movieDetail} from '../share/movie-detail'
+import {MoviesDataService} from '../service/movies-data.service';
+import {InMemoryDataService} from '../service/in-memory-data.service';
+import {MovieEmotion} from '../share/movieEmotion';
+import { faSmile, faSadCry, faKissWinkHeart, faFlushed, faGrinAlt, faGrinStars } from '@fortawesome/free-solid-svg-icons';
+
 
 
 @Component({
@@ -14,18 +18,47 @@ export class MovieDetailComponent implements OnInit {
   isFetching = false;
   movie:movieDetail;
   providedId: number;
+  public addEmotions:MovieEmotion;
+  mEmotions:MovieEmotion[];
+  thisMEmotion:MovieEmotion;
 
-  constructor(private route:ActivatedRoute, private service:MoviesDataService) { }
+  //Import icons
+  happyIcon = faSmile;
+  sadIcon = faSadCry;
+  loveIcon = faKissWinkHeart;
+  fearIcon = faFlushed;
+  optimisticIcon = faGrinAlt;
+  amazedIcon = faGrinStars;
+
+
+  constructor(private route:ActivatedRoute, private service:MoviesDataService, private emotionService:InMemoryDataService) {}
+
 
   ngOnInit(){
 
     this.providedId = this.route.snapshot.params['id'];
     this.isFetching = true;
+
     this.service.fetchMovieDetail(this.providedId).subscribe(data=>{
       this.isFetching = false;
      this.movie =data;    
   });
+
+  this.mEmotions = this.emotionService.getMovieEmotions();
+  this.thisMEmotion = this.mEmotions.find((emotions)=>emotions.movieId == this.providedId);
+  
+  this.thisMEmotion == null? this.addEmotions= new MovieEmotion(this.providedId,0,0,0,0,0,0) :this.addEmotions=this.thisMEmotion;
+
+  }
+
+
+
+  private addMovieEmotions(emotion:string): void{
     
+    if(emotion == 'happy'){
+    this.addEmotions.happy = this.addEmotions.happy+1;
     }
+    this.emotionService.addEmotion(this.addEmotions.movieId, this.addEmotions.happy, this.addEmotions.sad, this.addEmotions.loved, this.addEmotions.fear, this.addEmotions.optimistic, this.addEmotions.amazed);
+  }
 
 }
