@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {dataType} from '../movie';
-import {MoviesDataService} from '../movies-data.service';
+import {dataType} from '../share/movie';
+import {MoviesDataService} from '../service/movies-data.service';
+import { faSmile} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -15,6 +16,8 @@ export class SimilarMoviecardComponent implements OnInit {
 
   similarMovies:dataType[]=[];
   isFetching=false;
+  happyIcon = faSmile;
+
 
   count:number;
 

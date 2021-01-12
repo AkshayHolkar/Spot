@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MoviesDataService} from '../movies-data.service';
-import {dataType} from '../movie'
+import {MoviesDataService} from '../service/movies-data.service';
+import {dataType} from '../share/movie'
 
 
 

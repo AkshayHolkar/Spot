@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { dataType } from '../movie';
+import { dataType } from '../share/movie';
 
 
 @Component({
