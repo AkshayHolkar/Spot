@@ -48,15 +48,34 @@ export class MovieDetailComponent implements OnInit {
   this.thisMEmotion = this.mEmotions.find((emotions)=>emotions.movieId == this.providedId);
   
   this.thisMEmotion == null? this.addEmotions= new MovieEmotion(this.providedId,0,0,0,0,0,0) :this.addEmotions=this.thisMEmotion;
-
+  
   }
 
 
 
   private addMovieEmotions(emotion:string): void{
     
-    if(emotion == 'happy'){
-    this.addEmotions.happy = this.addEmotions.happy+1;
+    switch(emotion){
+      case 'happy':
+        this.addEmotions.happy = this.addEmotions.happy+1;
+        break;
+      case 'sad':
+        this.addEmotions.sad = this.addEmotions.sad+1;
+        break;
+      case 'love':
+        this.addEmotions.loved = this.addEmotions.loved+1;
+        break;
+      case 'fear':
+        this.addEmotions.fear = this.addEmotions.fear+1;
+        break;
+      case 'opti':
+        this.addEmotions.optimistic = this.addEmotions.optimistic+1;
+        break;
+      case 'amazed':
+        this.addEmotions.amazed = this.addEmotions.amazed+1;
+        break;
+        
+
     }
     this.emotionService.addEmotion(this.addEmotions.movieId, this.addEmotions.happy, this.addEmotions.sad, this.addEmotions.loved, this.addEmotions.fear, this.addEmotions.optimistic, this.addEmotions.amazed);
   }

@@ -22,6 +22,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MoviecardListComponent } from './moviecard-list/moviecard-list.component';
 import { SimilarMoviecardComponent } from './similar-moviecard/similar-moviecard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { InMemoryDataService } from './service/in-memory-data.service';
 //import { SmileTwoTone} from '@ant-design/icons';
 //import { Row, Col, Divider } from 'antd';
 
@@ -51,10 +52,10 @@ registerLocaleData(en);
     FontAwesomeModule,
     NzLayoutModule,
    // SmileTwoTone,
-  //  Row,Col,Divider,
-    
+  //  Row,Col,Divider, 
+ 
   ],
-  providers: [HttpClientModule,{ provide: NZ_I18N, useValue: en_US }],
+  providers: [HttpClientModule,{ provide: NZ_I18N, useValue: en_US }, InMemoryDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

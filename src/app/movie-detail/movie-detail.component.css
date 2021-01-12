@@ -73,6 +73,12 @@
   color: rgb(100, 0, 75); 
 }
 
+.wrongId{
+  color:white;
+  padding-left: 2%;
+    
+}
+
 
   a{
       padding: 5px;

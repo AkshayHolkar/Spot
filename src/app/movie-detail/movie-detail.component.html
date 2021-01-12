@@ -1,5 +1,5 @@
 <div>
-<div class="row">
+<div *ngIf="(movie != null); else noMovie" class="row">
 
 <div class="photo">
      <img alt="poster" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" />
@@ -15,42 +15,45 @@
 
   <p>Emotion- 
   <b class="happy">
-  <fa-icon [icon]="happyIcon"></fa-icon> {{thisMEmotion.happy}}
+  <fa-icon [icon]="happyIcon"></fa-icon> {{addEmotions.happy}}
   </b> 
 
    <b class="sad">
-  <fa-icon [icon]="sadIcon"></fa-icon> {{thisMEmotion.sad}}
+  <fa-icon [icon]="sadIcon"></fa-icon> {{addEmotions.sad}}
   </b> 
   
   <b class="loved">
-   <fa-icon [icon]="loveIcon"></fa-icon> {{thisMEmotion.loved}}
+   <fa-icon [icon]="loveIcon"></fa-icon> {{addEmotions.loved}}
   </b> 
 
    <b class="fear">
-   <fa-icon [icon]="fearIcon"></fa-icon>  {{thisMEmotion.fear}}
+   <fa-icon [icon]="fearIcon"></fa-icon>  {{addEmotions.fear}}
   </b> 
 
    <b class="optimistic">
-  <fa-icon [icon]="optimisticIcon"></fa-icon>  {{thisMEmotion.optimistic}}
+  <fa-icon [icon]="optimisticIcon"></fa-icon>  {{addEmotions.optimistic}}
   </b>
 
   <b class="amazed">
-  <fa-icon [icon]="amazedIcon"></fa-icon> {{thisMEmotion.amazed}}
+  <fa-icon [icon]="amazedIcon"></fa-icon> {{addEmotions.amazed}}
   </b> 
   
   </p>
     <p>Tag your Emotion- 
-    <button class="happy" ng-click="" ><fa-icon [icon]="happyIcon"></fa-icon></button>
-     <button class="sad" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="sadIcon"></fa-icon></button>  
-     <button class="loved" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="loveIcon"></fa-icon></button>  
-     <button class="fear" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="fearIcon"></fa-icon></button>  
-     <button class="optimistic" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="optimisticIcon"></fa-icon></button> 
-      <button class="amazed" ng-click="addMovieEmotions('happy')" ><fa-icon [icon]="amazedIcon"></fa-icon></button>  
+    <button class="happy" (click)="addMovieEmotions('happy')" ><fa-icon [icon]="happyIcon"></fa-icon></button>
+     <button class="sad" (click)="addMovieEmotions('sad')" ><fa-icon [icon]="sadIcon"></fa-icon></button>  
+     <button class="loved" (click)="addMovieEmotions('love')" ><fa-icon [icon]="loveIcon"></fa-icon></button>  
+     <button class="fear" (click)="addMovieEmotions('fear')" ><fa-icon [icon]="fearIcon"></fa-icon></button>  
+     <button class="optimistic" (click)="addMovieEmotions('opti')" ><fa-icon [icon]="optimisticIcon"></fa-icon></button> 
+      <button class="amazed" (click)="addMovieEmotions('amazed')" ><fa-icon [icon]="amazedIcon"></fa-icon></button>  
  
      </p>
     <button class="button_R">Remove</button>
 </div>
 </div>
+<ng-template #noMovie>
+<div class="wrongId"> No movie available on this Id</div>
+</ng-template>
 <div class="header">
   <h2>Similar Movies</h2>
 </div>
