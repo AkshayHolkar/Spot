@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
 import {movieDetail} from '../share/movie-detail'
 import {MoviesDataService} from '../service/movies-data.service';
 import {InMemoryDataService} from '../service/in-memory-data.service';
@@ -43,6 +43,26 @@ export class MovieDetailComponent implements OnInit {
       this.isFetching = false;
      this.movie =data;    
   });
+
+
+  this.route.params
+  .subscribe(
+    (params:Params)=>{
+      this.providedId = params['id'];
+      this.isFetching = true;
+
+      this.service.fetchMovieDetail(this.providedId).subscribe(data=>{
+        this.isFetching = false;
+       this.movie =data;  
+      });
+
+  this.mEmotions = this.emotionService.getMovieEmotions();
+  this.thisMEmotion = this.mEmotions.find((emotions)=>emotions.movieId == this.providedId);
+  
+  this.thisMEmotion == null? this.addEmotions= new MovieEmotion(this.providedId,0,0,0,0,0,0) :this.addEmotions=this.thisMEmotion;
+  
+    }
+  )
 
   this.mEmotions = this.emotionService.getMovieEmotions();
   this.thisMEmotion = this.mEmotions.find((emotions)=>emotions.movieId == this.providedId);
