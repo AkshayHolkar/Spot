@@ -4,12 +4,13 @@ import {MovieDetailComponent} from './movie-detail/movie-detail.component';
 import {SearchComponent} from './search/search.component';
 import {MoviecardListComponent} from './moviecard-list/moviecard-list.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {MovieResolverService} from './service/movie-resolver.service';
 
 const routes: Routes = [
   {path: '', component:MoviecardListComponent},
   {path: 'movie/:id', component:MovieDetailComponent},
-  {path: 'search/:emotion', component:SearchComponent},
-  {path: '**', component:PageNotFoundComponent}
+  {path: 'search/:emotion', component:SearchComponent, resolve:{movie:MovieResolverService}},
+  {path: '**', component:PageNotFoundComponent, data:{message:'Page not found'}}
 
 ];
 
