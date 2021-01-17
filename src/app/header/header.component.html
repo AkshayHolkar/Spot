@@ -5,12 +5,12 @@
           <button nz-button nz-dropdown [nzDropdownMenu]="menu" >I want to feel</button>
             <nz-dropdown-menu #menu="nzDropdownMenu">
                 <ul nz-menu>
-                    <li nz-menu-item><fa-icon [icon]="happyIcon"></fa-icon> Happy</li>
-                    <li nz-menu-item><fa-icon [icon]="sadIcon"></fa-icon> Sad</li>
-                    <li nz-menu-item><fa-icon [icon]="loveIcon"></fa-icon> Loved</li>
-                    <li nz-menu-item><fa-icon [icon]="fearIcon"></fa-icon> Fear</li>
-                    <li nz-menu-item><fa-icon [icon]="optimisticIcon"></fa-icon> Optimistic</li>
-                    <li nz-menu-item><fa-icon [icon]="amazedIcon"></fa-icon> Amazed</li>
+                    <li nz-menu-item><a [routerLink]="['/search','happy']"><fa-icon [icon]="happyIcon"></fa-icon> Happy</a></li>
+                    <li nz-menu-item><a [routerLink]="['/search','sad']"><fa-icon [icon]="sadIcon"></fa-icon> Sad</a></li>
+                    <li nz-menu-item><a [routerLink]="['/search','loved']"><fa-icon [icon]="loveIcon"></fa-icon> Loved</a></li>
+                    <li nz-menu-item><a [routerLink]="['/search','fear']"><fa-icon [icon]="fearIcon"></fa-icon> Fear</a></li>
+                    <li nz-menu-item><a [routerLink]="['/search','optimistic']"><fa-icon [icon]="optimisticIcon"></fa-icon> Optimistic</a></li>
+                    <li nz-menu-item><a [routerLink]="['/search','amazed']"><fa-icon [icon]="amazedIcon"></fa-icon> Amazed</a></li>
 
 
                 </ul>
