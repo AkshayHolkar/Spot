@@ -15,6 +15,8 @@ import { faSmile, faSadCry, faKissWinkHeart, faFlushed, faGrinAlt, faGrinStars }
 })
 export class MovieDetailComponent implements OnInit {
 
+  error = null;
+
   isFetching = false;
   movie:movieDetail;
   providedId: number;
@@ -31,11 +33,11 @@ export class MovieDetailComponent implements OnInit {
   amazedIcon = faGrinStars;
 
 
-  constructor(private route:ActivatedRoute, private service:MoviesDataService, private emotionService:InMemoryDataService) {}
+  constructor(private route:ActivatedRoute, private service:MoviesDataService, private inMemoryService:InMemoryDataService) {}
 
 
   ngOnInit(){
-
+    
     this.providedId = this.route.snapshot.params['id'];
     this.isFetching = true;
 
@@ -56,7 +58,7 @@ export class MovieDetailComponent implements OnInit {
        this.movie =data;  
       });
 
-  this.mEmotions = this.emotionService.getMovieEmotions();
+  this.mEmotions = this.inMemoryService.getMovieEmotions();
   this.thisMEmotion = this.mEmotions.find((emotions)=>emotions.movieId == this.providedId);
   
   this.thisMEmotion == null? this.addEmotions= new MovieEmotion(this.providedId,0,0,0,0,0,0) :this.addEmotions=this.thisMEmotion;
@@ -64,10 +66,12 @@ export class MovieDetailComponent implements OnInit {
     }
   )
 
-  this.mEmotions = this.emotionService.getMovieEmotions();
+  this.mEmotions = this.inMemoryService.getMovieEmotions();
   this.thisMEmotion = this.mEmotions.find((emotions)=>emotions.movieId == this.providedId);
   
   this.thisMEmotion == null? this.addEmotions= new MovieEmotion(this.providedId,0,0,0,0,0,0) :this.addEmotions=this.thisMEmotion;
+
+  
   
   }
 
@@ -97,7 +101,15 @@ export class MovieDetailComponent implements OnInit {
         
 
     }
-    this.emotionService.addEmotion(this.addEmotions.movieId, this.addEmotions.happy, this.addEmotions.sad, this.addEmotions.loved, this.addEmotions.fear, this.addEmotions.optimistic, this.addEmotions.amazed);
+    this.inMemoryService.addEmotion(this.addEmotions.movieId, this.addEmotions.happy, this.addEmotions.sad, this.addEmotions.loved, this.addEmotions.fear, this.addEmotions.optimistic, this.addEmotions.amazed);
   }
+
+  clickMethod(id:number) {
+    if(confirm("Click Ok to remove this movie from list")) {
+      //console.log("Implement delete functionality here");
+      this.inMemoryService.removeMovie(id);
+    }
+  }
+
 
 }

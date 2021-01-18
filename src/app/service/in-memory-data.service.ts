@@ -7,7 +7,8 @@ import { MovieEmotion } from '../share/movieEmotion';
 export class InMemoryDataService {
 
   private emotions: MovieEmotion[];
-  
+
+  private removedMovies: number[]; 
 
   constructor(){
     this.emotions = [
@@ -15,6 +16,8 @@ export class InMemoryDataService {
       new MovieEmotion(614911, 2, 0, 0, 0, 4, 2),
       new MovieEmotion(733317, 0, 0, 0, 4, 0, 2)
     ];
+
+    this.removedMovies = [655431];
   }
 
 
@@ -39,6 +42,16 @@ export class InMemoryDataService {
 
   public removeEmotion(id: number): void {
     this.emotions = this.emotions.filter((emotion)=> emotion.movieId != id);
+  }
+
+  public removeMovie(id:number):void{
+
+    this.removedMovies.push(id);
+  }
+
+  public getRemovedMovies():number[]{
+
+    return this.removedMovies;
   }
  
 }

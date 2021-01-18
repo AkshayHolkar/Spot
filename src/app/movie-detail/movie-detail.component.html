@@ -48,7 +48,7 @@
       <button class="amazed" (click)="addMovieEmotions('amazed')" ><fa-icon [icon]="amazedIcon"></fa-icon></button>  
  
      </p>
-    <button class="button_R">Remove</button>
+    <button class="button_R" (click)="clickMethod(movie.id)" [routerLink]="['']">Remove</button>
 </div>
 </div>
 <ng-template #noMovie>
