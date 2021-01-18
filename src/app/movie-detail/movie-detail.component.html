@@ -1,4 +1,5 @@
 <div>
+<app-alert [id]= "movie.id" *ngIf="remove" (close)="onClose()"></app-alert>
 <div *ngIf="(movie != null); else noMovie" class="row">
 
 <div class="photo">
@@ -48,7 +49,7 @@
       <button class="amazed" (click)="addMovieEmotions('amazed')" ><fa-icon [icon]="amazedIcon"></fa-icon></button>  
  
      </p>
-    <button class="button_R" (click)="clickMethod(movie.id)" [routerLink]="['']">Remove</button>
+    <button class="button_R" (click)="clickMethod(movie.id)" >Remove</button>
 </div>
 </div>
 <ng-template #noMovie>

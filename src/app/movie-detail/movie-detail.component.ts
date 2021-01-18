@@ -15,7 +15,7 @@ import { faSmile, faSadCry, faKissWinkHeart, faFlushed, faGrinAlt, faGrinStars }
 })
 export class MovieDetailComponent implements OnInit {
 
-  error = null;
+  remove = false;
 
   isFetching = false;
   movie:movieDetail;
@@ -105,10 +105,11 @@ export class MovieDetailComponent implements OnInit {
   }
 
   clickMethod(id:number) {
-    if(confirm("Click Ok to remove this movie from list")) {
-      //console.log("Implement delete functionality here");
-      this.inMemoryService.removeMovie(id);
-    }
+    this.remove = true;    
+  }
+
+  onClose(){
+    this.remove = false;
   }
 
 

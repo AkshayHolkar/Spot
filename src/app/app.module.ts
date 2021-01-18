@@ -25,6 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {SearchComponent} from './search/search.component';
 import { InMemoryDataService } from './service/in-memory-data.service';
 import { MovieResolverService } from './service/movie-resolver.service';
+import { AlertComponent } from './alert/alert.component';
 //import { SmileTwoTone} from '@ant-design/icons';
 //import { Row, Col, Divider } from 'antd';
 
@@ -41,7 +42,8 @@ registerLocaleData(en);
     MovieDetailComponent,
     SimilarMoviecardComponent,
     PageNotFoundComponent,
-    SearchComponent
+    SearchComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
