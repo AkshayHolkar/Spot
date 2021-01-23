@@ -3,6 +3,7 @@ import { InMemoryDataService } from '../service/in-memory-data.service';
 import {MoviesDataService} from '../service/movies-data.service';
 import {dataType} from '../share/movie';
 import {ActivatedRoute, Data} from '@angular/router';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
 
@@ -10,10 +11,25 @@ import {ActivatedRoute, Data} from '@angular/router';
 @Component({
   selector: 'app-moviecard-list',
   templateUrl: './moviecard-list.component.html',
-  styleUrls: ['./moviecard-list.component.css']
+  styleUrls: ['./moviecard-list.component.css'],
+  animations:[
+    trigger('cardState', [
+      state('in', style({
+        opacity: 1,
+        transform: 'translateX(0) scale(1)'
+      })),
+      transition('void => *', [
+        style({
+          opacity: 0,
+          transform: 'translateY(0) scale(0.5)'}
+        ),
+        animate(400)
+      ]),
+  ])
+]
 })
 export class MoviecardListComponent implements OnInit {
- 
+
   isFetching = false;
   movies:dataType[]=[];
   removedMovies:number[];
@@ -46,8 +62,8 @@ export class MoviecardListComponent implements OnInit {
       this.movies = this.movies.filter((e)=> e.id != id);
     }
 
-  
+
   }
- 
+
 
 }
