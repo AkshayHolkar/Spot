@@ -1,6 +1,5 @@
-<nz-card style nzHoverable style="width:240px" [nzCover]="coverTemplate">
-<nz-card-meta nzTitle="{{movie.title}}" nzDescription="{{(movie.overview.length>20)? (movie.overview | slice:0:20)+'..':(movie.overview)}}"></nz-card-meta>
-<button nz-button nz-dropdown [routerLink]="['/movie',movie.id]" >More Detail</button>
+<nz-card style nzHoverable style="width:240px" [nzCover]="coverTemplate" [routerLink]="['/movie',movie.id]" >
+<nz-card-meta nz-meta nzTitle="{{movie.title}}" nzDescription="{{(movie.overview.length>70)? (movie.overview | slice:0:70)+'...':(movie.overview)}}"></nz-card-meta>
 </nz-card>
 <ng-template #coverTemplate>
     <img alt="poster" src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" />

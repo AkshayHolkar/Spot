@@ -1,22 +1,8 @@
-[nz-button] {
-    margin-top: 30px;
-    margin-right: 8px;
-    margin-bottom: 8px;
-    border-radius: 12px;
-    transition-duration: 0.4s;
-    background-color: white;
-    color: black;
-    border: 2px solid #4c56af; 
-  }
-
-[nz-button]:hover {
-    background-color: #4c56af; 
-    color: white;
-  }
-
 [style]{
-
     background-color: rgb(233, 233, 233);
   }
 
- 
+[nz-meta]{
+    height: 100px;
+  }
+
