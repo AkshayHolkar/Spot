@@ -26,6 +26,9 @@ import {SearchComponent} from './search/search.component';
 import { InMemoryDataService } from './service/in-memory-data.service';
 import { MovieResolverService } from './service/movie-resolver.service';
 import { AlertComponent } from './alert/alert.component';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
+
 //import { SmileTwoTone} from '@ant-design/icons';
 //import { Row, Col, Divider } from 'antd';
 
@@ -56,9 +59,11 @@ registerLocaleData(en);
     NzDropDownModule,
     FontAwesomeModule,
     NzLayoutModule,
+    NzButtonModule,
+    NzToolTipModule,
    // SmileTwoTone,
-  //  Row,Col,Divider, 
- 
+  //  Row,Col,Divider,
+
   ],
   providers: [HttpClientModule,{ provide: NZ_I18N, useValue: en_US }, InMemoryDataService, MovieResolverService],
   bootstrap: [AppComponent]

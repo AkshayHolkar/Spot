@@ -3,33 +3,35 @@
 <div *ngIf="(movie != null); else noMovie" class="row">
 
 <div class="photo">
-     <img alt="poster" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" />
+     <img alt="poster" src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" [@imageState] />
 
 </div>
 
 <div class="info">
-  <h1>{{movie.title}}</h1>
+  <h1 [@titleState]>{{movie.title}}</h1>
+
+  <div [@textState]>
   <h2>{{movie.tagline}}</h2>
   <p>{{movie.overview}}</p>
   <p>Average vote: <b>{{movie.vote_average}}</b></p>
   <p>Release date: <b>{{movie.release_date}}</b></p>
 
-  <p>Emotion- 
+  <p>Emotion-
   <b class="happy">
   <fa-icon [icon]="happyIcon"></fa-icon> {{addEmotions.happy}}
-  </b> 
+  </b>
 
    <b class="sad">
   <fa-icon [icon]="sadIcon"></fa-icon> {{addEmotions.sad}}
-  </b> 
-  
+  </b>
+
   <b class="loved">
    <fa-icon [icon]="loveIcon"></fa-icon> {{addEmotions.loved}}
-  </b> 
+  </b>
 
    <b class="fear">
    <fa-icon [icon]="fearIcon"></fa-icon>  {{addEmotions.fear}}
-  </b> 
+  </b>
 
    <b class="optimistic">
   <fa-icon [icon]="optimisticIcon"></fa-icon>  {{addEmotions.optimistic}}
@@ -37,24 +39,28 @@
 
   <b class="amazed">
   <fa-icon [icon]="amazedIcon"></fa-icon> {{addEmotions.amazed}}
-  </b> 
-  
+  </b>
+
   </p>
-    <p>Tag your Emotion- 
-    <button class="happy" (click)="addMovieEmotions('happy')" ><fa-icon [icon]="happyIcon"></fa-icon></button>
-     <button class="sad" (click)="addMovieEmotions('sad')" ><fa-icon [icon]="sadIcon"></fa-icon></button>  
-     <button class="loved" (click)="addMovieEmotions('love')" ><fa-icon [icon]="loveIcon"></fa-icon></button>  
-     <button class="fear" (click)="addMovieEmotions('fear')" ><fa-icon [icon]="fearIcon"></fa-icon></button>  
-     <button class="optimistic" (click)="addMovieEmotions('opti')" ><fa-icon [icon]="optimisticIcon"></fa-icon></button> 
-      <button class="amazed" (click)="addMovieEmotions('amazed')" ><fa-icon [icon]="amazedIcon"></fa-icon></button>  
- 
+    <p>Tag your Emotion-
+    <button nzTooltipTitle="Happy" nzTooltipPlacement="top" nz-tooltip class="happy" (click)="addMovieEmotions('happy')" ><fa-icon [icon]="happyIcon"></fa-icon></button>
+     <button nzTooltipTitle="Sad" nzTooltipPlacement="top" nz-tooltip class="happy" class="sad" (click)="addMovieEmotions('sad')" ><fa-icon [icon]="sadIcon"></fa-icon></button>
+     <button nzTooltipTitle="Love" nzTooltipPlacement="top" nz-tooltip class="happy" class="loved" (click)="addMovieEmotions('love')" ><fa-icon [icon]="loveIcon"></fa-icon></button>
+     <button nzTooltipTitle="Fear" nzTooltipPlacement="top" nz-tooltip class="happy" class="fear" (click)="addMovieEmotions('fear')" ><fa-icon [icon]="fearIcon"></fa-icon></button>
+     <button nzTooltipTitle="Optimistic" nzTooltipPlacement="top" nz-tooltip class="happy" class="optimistic" (click)="addMovieEmotions('opti')" ><fa-icon [icon]="optimisticIcon"></fa-icon></button>
+      <button nzTooltipTitle="Amazed" nzTooltipPlacement="top" nz-tooltip class="happy" class="amazed" (click)="addMovieEmotions('amazed')" ><fa-icon [icon]="amazedIcon"></fa-icon></button>
+
      </p>
     <button class="button_R" (click)="clickMethod(movie.id)" >Remove</button>
+
 </div>
 </div>
+
 <ng-template #noMovie>
 <div class="wrongId"> No movie available on this Id</div>
 </ng-template>
+</div>
+
 <div class="header">
   <h2>Similar Movies</h2>
 </div>
