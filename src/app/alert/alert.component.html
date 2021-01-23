@@ -1,5 +1,5 @@
 <div class="backdrop" (click)="onClose()"></div>
-<div class="alert-box">
+<div class="alert-box" [@boxState]>
   <p>Are you sure you want to remove this movie?</p>
   <div class="alert-box-actions">
     <button class="deletebtn" (click)="onRemove()">Remove</button>
