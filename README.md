@@ -1,5 +1,13 @@
 # Spot
 
+## API used for project
+The Movie Database API
+https://developers.themoviedb.org/4/getting-started
+
+## Demo video
+https://www.loom.com/share/146b8ce5f8da4c6b9319bd0d7dafdf55
+
+## Angular version
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
