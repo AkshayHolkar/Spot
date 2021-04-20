@@ -5,7 +5,7 @@ The Movie Database API
 https://developers.themoviedb.org/4/getting-started
 
 ## Demo video
-https://www.loom.com/share/146b8ce5f8da4c6b9319bd0d7dafdf55
+https://www.loom.com/share/4baa33e776334da8a8375ecf0163e4e1
 
 ## Angular version
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
